@@ -1,14 +1,14 @@
- const Model = require('../../models/classroom.model');
+ const Classroom = require('../../models/classroom.model');
 
  exports.create = requestData => {
      const entity = new Model(requestData);
      return entity.save();
  };
  
- exports.findAll = () => Model.find();
+ exports.findAll = () => Classroom.find();
  
- exports.findOne = id => Model.findById(id);
+ exports.findOne = id => Classroom.findById(id).populate('name');
  
- exports.update = (id, updateData) => Model.findByIdAndUpdate(id, updateData, { new: true });
+ exports.update = (id, updateData) => Classroom.findByIdAndUpdate(id, updateData, { new: true });
  
- exports.delete = id => Model.findByIdAndRemove(id);
+ exports.delete = id => Classroom.findByIdAndRemove(id);
