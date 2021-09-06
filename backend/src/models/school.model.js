@@ -17,10 +17,10 @@ const SchoolSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    classroom: {
+    classroom: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Classroom'
-    }
+    }]
 }, {
     timestamps: true
 });
