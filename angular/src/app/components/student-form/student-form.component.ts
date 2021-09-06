@@ -3,6 +3,7 @@ import { FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from 'src/app/models/student';
 import { StudentHttpService } from 'src/app/service/student-http.service';
+import { ClassroomComponent } from '../classroom/classroom.component';
 
 @Component({
   selector: 'app-student-form',
@@ -15,7 +16,7 @@ export class StudentFormComponent implements OnInit {
   reactForm: FormGroup;
 
   studentId: string;
-  studentForm: Student = { firstName: '', lastName:'',email: '', classroom: null}
+  studentForm: Student = { firstName: '', lastName:'',email: '', classroom: ClassroomComponent}
 
   constructor(
     private route: ActivatedRoute,
