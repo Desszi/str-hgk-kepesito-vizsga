@@ -5,9 +5,9 @@
      return entity.save();
  };
  
- exports.findAll = () => Model.find().populate();
+ exports.findAll = () => Model.find();
  
- exports.findOne = id => Model.findById(id).populate();
+ exports.findOne = id => Model.findById(id);
  
  exports.update = (id, updateData) => Model.findByIdAndUpdate(id, updateData, { new: true });
  
